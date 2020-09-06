@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <script>
+       document.addEventListener('DOMContentLoaded' , () => {
+    document.querySelector('#new-task').onsubmit = () => {
+
+        //Create new item for the list
+        const li = document.createElement('li');
+        li.innerHTML = document.querySelector('#task').value;
+
+        // Addition to new item in the list
+        document.querySelector('#tasks').append(li);
+
+        // Clear the list
+        document.querySelector('#task').value = '';
+
+        // Stop
+        return false;
+    };
+
+})
+
+   </script>
+    <title>Todo Application</title>
+</head>
+    <body>
+        <h1>Things to do</h1>
+        <ul id ='tasks'>
+        </ul>
+        <form id= 'new-task'>
+            <input id= 'task' autocomplete = 'off' autofocus placeholder = 'new todo'>
+            <input type = 'submit'>
+        </form>
+    </body>
+
+</html>
